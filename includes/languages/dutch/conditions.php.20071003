@@ -1,0 +1,32 @@
+<?php
+/*
+  $Id: conditions.php,v 1.4 2002/11/19 01:48:08 dgw_ Exp $
+
+  osCommerce, Open Source E-Commerce Solutions
+  http://www.oscommerce.com
+
+  Copyright (c) 2002 osCommerce
+
+  Released under the GNU General Public License
+*/
+
+define('NAVBAR_TITLE', 'Algemene voorwaarden');
+define('HEADING_TITLE', 'Algemene voorwaarden');
+
+define('TEXT_INFORMATION', 'Algemene voorwaarden van Geven & Nemen, gevestigd te Neerbeek ingeschreven bij de Kamer van Koophandel Zuid Limburg onder nummer: 14095769.
+<p>
+Als u bij Geven & Nemen artikelen bestelt, verklaart u zich akkoord met de bepalingen in deze Algemene Voorwaarden.
+<br>
+<ul>
+<li>Alle prijzen zijn in euro\'s vermeld, inclusief 19% <abbr title="Belasting Toegevoegde Waarde">BTW</abbr> en <abbr title="exclusief">excl.</abbr> verzendkosten.
+<li>Voor de verzending van de artikelen brengen wij de daarvoor noodzakelijke verzendkosten in rekening.
+<li>Wij doen onze best om de website zo up-to-date mogelijk te houden, echter het kan in uitzonderlijke gevallen voorkomen dat er onverhoopt een Geven & Nemen product niet, of tijdelijk niet meer, leverbaar is. In dit geval nemen wij zo spoedig mogelijk contact met u op. 
+<li>Indien u een verkeerde bestelling heeft ontvangen zal Geven & Nemen zorg dragen voor het verzenden van de goede artikelen. 
+<li>Alle persoonsgegevens worden uitsluitend gebruikt voor de afhandeling van de bestelling en zullen nooit aan derden ter beschikking worden gesteld.
+<li>Geven & Nemen kan niet aansprakelijk worden gesteld voor enige schade, zowel lichamelijk, materieel of immaterieel, die het gevolg zou zijn van gebrekkig functioneren of verkeerd gebruik van de door ons verkochte producten. 
+<li>Wij aanvaarden geen enkele aansprakelijkheid voor schade, van welke aard dan ook. die het gevolg is van deze internetsite en/of beslissingen die gebaseerd zijn op informatie uit deze site. 
+<li>Geven & Nemen is nooit aansprakelijk voor het verloren gaan of beschadigen van verzonden artikelen.
+<li>U heeft de mogelijkheid om bestellingen verzekerd laten te verzenden. Kosten zijn &euro; 1.75 extra.
+<li>Wij streven naar 100% tevreden klanten. Heeft u over onze dienst en/of product een klacht, horen wij het graag. U kunt altijd contact met ons opnemen via <a href="mailto:mila@geven-nemen.nl" class="mailaddress">mila@geven-nemen.nl</a> of het <a href="contact_us.php" class="mailaddress">contact formulier</a>. Wij zullen dan zo spoedig mogelijk reageren. 
+</ul>');
+?>

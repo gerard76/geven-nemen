@@ -1,0 +1,412 @@
+/*
+  $Id: stylesheet.css,v 1.56 2003/06/30 20:04:02 hpdl Exp $
+
+  osCommerce, Open Source E-Commerce Solutions
+  http://www.oscommerce.com
+
+  Copyright (c) 2003 osCommerce
+
+  Released under the GNU General Public License
+*/
+
+.boxText { font-family:Verdana font-size: 11px;font-weight: normal; }
+.errorBox { font-family : Verdana; font-size : 11px; background: #ffb3b5; font-weight: bold; }
+.stockWarning { font-family : Verdana; font-size : 12px; color: #cc0033; }
+.productsNotifications { background: #f2fff7; }
+.orderEdit { font-family : Verdana; font-size : 12px; color: #70d250; text-decoration: underline; }
+
+BODY {
+  background: #F8E0E8;
+  color: #000000;
+  margin: 12px;
+  margin-top: 0px;
+}
+
+A {
+  color: #000000;
+  text-decoration: none;
+}
+
+A:hover {
+  color: #D65375;
+  text-decoration: none;
+}
+
+A.mailaddress {
+  color: #D65375;
+  text-decoration: none;
+}
+
+FORM {
+	display: inline;
+}
+
+TR.header {
+  background: #F8E0E8;
+  font-family: Verdana;
+  font-size: 9px;
+}
+
+TR.headerNavigation {
+  background: #E77B94;
+}
+
+TD.headerNavigation {
+  font-family: Verdana;
+  font-size: 11px;
+  background: #E77B94;
+  color: #ffffff;
+  font-weight : bold;
+}
+
+A.headerNavigation { 
+  color: #FFFFFF; 
+  vertical-align: top;
+}
+
+A.headerNavigation:hover {
+  color: #ffffff;
+}
+
+TR.headerError {
+  background: #ff0000;
+}
+
+TD.headerError {
+  font-family: Verdana;
+  font-size: 12px;
+  background: #ff0000;
+  color: #ffffff;
+  font-weight : bold;
+  text-align : center;
+}
+
+TR.headerInfo {
+  background: #00ff00;
+}
+
+TD.headerInfo {
+  font-family: Tahoma, Book Antiqua, Georgia, Times New Roman;
+  font-size: 12px;
+  background: #00ff00;
+  color: #ffffff;
+  font-weight: bold;
+  text-align: center;
+}
+
+TR.footer {
+  background: #BACDED;
+}
+
+TD.footer {
+  font-family: Verdana;
+  font-size: 11px;
+  background: #BACDED;
+  color: #ffffff;
+  font-weight: bold;
+  padding-right: 5px;
+  padding-left: 5px;
+}
+
+.tableBox {
+  background: #FFFFFF;
+  border-color: #F4C9D7;
+  border-width: 1px;
+  border-style: solid;
+  padding: 3px;
+  margin-top: 3px;
+}
+.infoBox {
+  background: #FFFFFF;
+  border-color: #F4C9D7;
+  border-width: 1px;
+  border-style: solid;
+  padding: 3px;
+  margin-top: 3px;
+}
+
+.infoBoxContents {
+  background: #f8f8f9;
+  font-family: Verdana;
+  font-size: 11px;
+}
+
+.infoBoxNotice {
+  background: #FF8E90;
+}
+
+.infoBoxNoticeContents {
+  background: #FFE6E6;
+  font-family: Book Antiqua, Georgia, Times New Roman;
+  font-size: 12px;
+}
+
+TD.infoBoxHeading {
+  font-family: Verdana, Georgia, Times New Roman;
+  font-size: 16px;
+  font-weight: bold;
+  background: #FFFFFF;
+  color: #E77B94;
+  text-align: center;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  background-image: url(images/infobox_texture.gif);
+}
+
+TD.infoBox, SPAN.infoBox {
+  font-family: Book Antiqua, Georgia, Times New Roman;
+  font-size: 12px;
+}
+
+TR.accountHistory-odd, TR.addressBook-odd, TR.alsoPurchased-odd, TR.payment-odd, TR.productListing-odd, TR.productReviews-odd, TR.upcomingProducts-odd, TR.shippingOptions-odd {
+  background: #FFFFFF;
+}
+
+TR.accountHistory-even, TR.addressBook-even, TR.alsoPurchased-even, TR.payment-even, TR.productListing-even, TR.productReviews-even, TR.upcomingProducts-even, TR.shippingOptions-even {
+  background: #F8E0E8;
+/*  background: #FDEFF1;*/
+}
+
+TABLE.productListing {
+  border: 1px;
+  border-style: solid;
+  border-color: #F8C9D8;
+  border-spacing: 1px;
+}
+
+.productListing-heading {
+  font-family: Verdana;
+  font-size: 12px;
+  background: #E77B94;
+  color: #FFFFFF;
+  font-weight: bold;
+}
+
+TD.productListing-data {
+  font-family: Verdana;
+  font-size: 11px;
+  vertical-align: top;
+  padding-top: 2 px;
+}
+
+A.pageResults {
+  color: #0000FF;
+}
+
+A.pageResults:hover {
+  color: #0000FF;
+  background: #FFFF33;
+}
+
+TABLE.mainTable{
+ padding-left:5px;
+ padding-right:5px;
+}
+
+TD.pageHeading, DIV.pageHeading {
+  font-family: "Monotype Corsiva",Verdana;
+  font-size: 26px;
+  font-weight: bold;
+  color: #84B5Da;
+  padding: 3px;6
+}
+TD.pageHeadingTextOnly, DIV.pageHeading {
+  font-family: "Monotype Corsiva",Verdana;
+  font-size: 26px;
+  font-weight: bold;
+  color: #84B5D6;
+  padding-top: 10px;
+}
+
+TR.subBar {
+  background: #f4f7fd;
+}
+
+TD.subBar {
+  font-family: Verdana;
+  font-size: 12px;
+  color: #000000;
+}
+
+TD.main, P.main {
+  font-family: Verdana;
+  font-size: 11px;
+  line-height: 1.5;
+  padding: 3px;
+}
+
+TD.smallText, SPAN.smallText, P.smallText {
+  font-family: Verdana;
+  font-size: 10px;
+}
+
+TD.accountCategory {
+  font-family: Verdana;
+  font-size: 13px;
+  color: #aabbdd;
+}
+
+TD.fieldKey {
+  font-family: Verdana;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+TD.fieldValue {
+  font-family: Verdana;
+  font-size: 12px;
+}
+
+TD.tableHeading {
+  font-family: Verdana;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+TD.newItemInCart {
+  font-family: Verdana;
+  font-size: 11px;
+  font-weight: bold;
+  color: #D65375;
+}
+SPAN.newItemInCart {
+  font-family: Verdana;
+  font-size: 11px;
+  font-weight: bold;
+  color: #D65375;
+}
+
+CHECKBOX, INPUT, RADIO, SELECT {
+  font-family: Verdana, Georgia, Times New Roman;
+  font-size: 11px;
+}
+
+TEXTAREA {
+  width: 100%;
+  font-family: Verdana, Book Antiqua, Georgia, Times New Roman;
+  font-size: 11px;
+}
+
+SPAN.greetUser {
+  font-family: Verdana;
+  color: #D65273;
+  font-weight: bold;
+}
+
+TABLE.formArea {
+  background: #f1f9fe;
+  border-color: #7b9ebd;
+  border-style: solid;
+  border-width: 1px;
+}
+
+TD.formAreaTitle {
+  font-family: Tahoma, Book Antiqua, Georgia, Times New Roman;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+SPAN.markProductOutOfStock {
+  font-family: Tahoma, Book Antiqua, Georgia, Times New Roman;
+  font-size: 12px;
+  color: #c76170;
+  font-weight: bold;
+}
+
+SPAN.productSpecialPrice {
+  font-family: "Monotype Corsiva",Verdana;
+  font-weight: bold;
+  color: #ff0000;
+}
+
+SPAN.errorText {
+  font-family: Verdana;
+  color: #ff0000;
+}
+/* categories */
+.categoryActive {
+ color: #D65375;
+}
+
+.product-listing-product-name {
+ color: #D65375;
+ /* color: #AD7394;*/
+ font-weight: bold;
+ font-size: 11px;
+}
+
+.product-listing-product-price {
+ color: #000000;
+ padding-right: 3px;
+ padding-left: 3px;
+}
+
+.moduleRow { }
+.moduleRowOver { background-color: #D7E9F7; cursor: pointer; cursor: hand; }
+.moduleRowSelected { background-color: #E9F4FC; }
+
+.checkoutBarFrom, .checkoutBarTo { font-family: Verdana; font-size: 12px; color: #8c8c8c; }
+.checkoutBarCurrent { font-family: Verdana; font-size: 12px; color: #000000; }
+
+/* message box */
+
+.messageBox { font-family: Verdana; font-size: 12px; }
+.messageStackError, .messageStackWarning { font-family: Verdana; font-size: 12px; background-color: #ffb3b5; }
+.messageStackSuccess { font-family: Verdana; font-size: 12px; background-color: #99ff00; }
+
+/* input requirement */
+
+.inputRequirement { font-family: Verdana; font-size: 12px; color: #ff0000; }
+
+/* VJ Links Manager v1.18 begin */
+
+TABLE.linkListing {
+  border: 1px;
+  border-style: solid;
+  border-color: #b6b7cb;
+  border-spacing: 1px;
+  width: 100%;
+  text-align: center;
+}
+
+.linkListing-heading {
+  font-family: Verdana, Arial, sans-serif;
+  font-size: 10px;
+  font-weight: bold;
+  background: #b6b7cb;
+  color: #FFFFFF;
+  text-align: center;
+}
+
+A.linkListing-heading {
+  color: #FFFFFF;
+}
+
+A.linkListing-heading:hover {
+  color: #FF0000;
+}
+
+TD.linkListing-data {
+  border-right: 1px solid #b6b7cb;
+  border-bottom: 1px solid #b6b7cb;
+  padding: 4px;
+  font-family: Verdana, Arial, sans-serif;
+  font-size: 10px;
+}
+
+TR.linkListing-odd {
+  background: #f8f8f9;
+}
+
+TR.linkListing-even {
+  background: #F5F5F5;
+}
+
+.linkFeatured {
+  font-family: Verdana, Arial, sans-serif;
+  font-size: 10px;
+  font-weight: bold;
+  background: #dbd6d6;
+  color: #FFFFFF;
+  text-align: center;
+  border: 1px solid black;
