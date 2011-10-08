@@ -1,2 +1,5 @@
-images/
+images/*.jpg
+images/*.gif
+images/*/*.jpg
+images/*/*.gif
 awstats/
