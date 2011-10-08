@@ -1,5 +1,579 @@
+# Deny domain access to spammers and other scumbags
+
+RewriteEngine on
+php_flag register_globals off
+SetEnvIfNoCase User-Agent "^libwww-perl*" block_bad_bots
+Deny from env=block_bad_bots
+
+# Redirect index.php to domain.com
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /index\.php\ HTTP/
+RewriteRule ^index\.php$ http://www.geven-nemen.nl/ [R=301,L]
+
+# Redirect domain.com to www.domain.com
+RewriteCond %{HTTP_HOST} ^geven-nemen.nl [NC]
+RewriteRule ^(.*)$ http://www.geven-nemen.nl/$1 [L,R=301]
+
+RewriteBase /
+
+# filter for most common exploits
+RewriteCond %{HTTP_USER_AGENT} libwww-perl [OR]
+RewriteCond %{QUERY_STRING} tool25 [OR]
+RewriteCond %{QUERY_STRING} cmd.txt [OR]
+RewriteCond %{QUERY_STRING} cmd.gif [OR]
+RewriteCond %{QUERY_STRING} r57shell [OR]
+RewriteCond %{QUERY_STRING} c99 [OR]
+
+# ban spam bots
+RewriteCond %{HTTP_USER_AGENT} almaden [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Anarchie [OR]
+RewriteCond %{HTTP_USER_AGENT} ^ASPSeek [OR]
+RewriteCond %{HTTP_USER_AGENT} ^attach [OR]
+RewriteCond %{HTTP_USER_AGENT} ^autoemailspider [OR]
+RewriteCond %{HTTP_USER_AGENT} ^BackWeb [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Bandit [OR]
+RewriteCond %{HTTP_USER_AGENT} ^BatchFTP [OR]
+RewriteCond %{HTTP_USER_AGENT} ^BlackWidow [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Bot\ mailto:craftbot@yahoo.com [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Buddy [OR]
+RewriteCond %{HTTP_USER_AGENT} ^bumblebee [OR]
+RewriteCond %{HTTP_USER_AGENT} ^CherryPicker [OR]
+RewriteCond %{HTTP_USER_AGENT} ^ChinaClaw [OR]
+RewriteCond %{HTTP_USER_AGENT} ^CICC [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Collector [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Copier [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Crescent [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Custo [OR]
+RewriteCond %{HTTP_USER_AGENT} ^DA [OR]
+RewriteCond %{HTTP_USER_AGENT} ^DIIbot [OR]
+RewriteCond %{HTTP_USER_AGENT} ^DISCo [OR]
+RewriteCond %{HTTP_USER_AGENT} ^DISCo\ Pump [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Download\ Demon [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Download\ Wonder [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Downloader [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Drip [OR]
+RewriteCond %{HTTP_USER_AGENT} ^DSurf15a [OR]
+RewriteCond %{HTTP_USER_AGENT} ^eCatch [OR]
+RewriteCond %{HTTP_USER_AGENT} ^EasyDL/2.99 [OR]
+RewriteCond %{HTTP_USER_AGENT} ^EirGrabber [OR]
+RewriteCond %{HTTP_USER_AGENT} email [NC,OR]
+RewriteCond %{HTTP_USER_AGENT} ^EmailCollector [OR]
+RewriteCond %{HTTP_USER_AGENT} ^EmailSiphon [OR]
+RewriteCond %{HTTP_USER_AGENT} ^EmailWolf [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Express\ WebPictures [OR]
+RewriteCond %{HTTP_USER_AGENT} ^ExtractorPro [OR]
+RewriteCond %{HTTP_USER_AGENT} ^EyeNetIE [OR]
+RewriteCond %{HTTP_USER_AGENT} ^FileHound [OR]
+RewriteCond %{HTTP_USER_AGENT} ^FlashGet [OR]
+RewriteCond %{HTTP_USER_AGENT} FrontPage [NC,OR]
+RewriteCond %{HTTP_USER_AGENT} ^GetRight [OR]
+RewriteCond %{HTTP_USER_AGENT} ^GetSmart [OR]
+RewriteCond %{HTTP_USER_AGENT} ^GetWeb! [OR]
+RewriteCond %{HTTP_USER_AGENT} ^gigabaz [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Go\!Zilla [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Go!Zilla [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Go-Ahead-Got-It [OR]
+RewriteCond %{HTTP_USER_AGENT} ^gotit [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Grabber [OR]
+RewriteCond %{HTTP_USER_AGENT} ^GrabNet [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Grafula [OR]
+RewriteCond %{HTTP_USER_AGENT} ^grub-client [OR]
+RewriteCond %{HTTP_USER_AGENT} ^HMView [OR]
+RewriteCond %{HTTP_USER_AGENT} ^HTTrack [OR]
+RewriteCond %{HTTP_USER_AGENT} ^httpdown [OR]
+RewriteCond %{HTTP_USER_AGENT} .*httrack.* [NC,OR]
+RewriteCond %{HTTP_USER_AGENT} ^ia_archiver [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Image\ Stripper [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Image\ Sucker [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Indy*Library [OR]
+RewriteCond %{HTTP_USER_AGENT} Indy\ Library [NC,OR]
+RewriteCond %{HTTP_USER_AGENT} ^InterGET [OR]
+RewriteCond %{HTTP_USER_AGENT} ^InternetLinkagent [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Internet\ Ninja [OR]
+RewriteCond %{HTTP_USER_AGENT} ^InternetSeer.com [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Iria [OR]
+RewriteCond %{HTTP_USER_AGENT} ^JBH*agent [OR]
+RewriteCond %{HTTP_USER_AGENT} ^JetCar [OR]
+RewriteCond %{HTTP_USER_AGENT} ^JOC\ Web\ Spider [OR]
+RewriteCond %{HTTP_USER_AGENT} ^JustView [OR]
+RewriteCond %{HTTP_USER_AGENT} ^larbin [OR]
+RewriteCond %{HTTP_USER_AGENT} ^LeechFTP [OR]
+RewriteCond %{HTTP_USER_AGENT} ^LexiBot [OR]
+RewriteCond %{HTTP_USER_AGENT} ^lftp [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Link*Sleuth [OR]
+RewriteCond %{HTTP_USER_AGENT} ^likse [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Link [OR]
+RewriteCond %{HTTP_USER_AGENT} ^LinkWalker [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Mag-Net [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Magnet [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Mass\ Downloader [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Memo [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Microsoft.URL [OR]
+RewriteCond %{HTTP_USER_AGENT} ^MIDown\ tool [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Mirror [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Mister\ PiX [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Mozilla.*Indy [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Mozilla.*NEWT [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Mozilla*MSIECrawler [OR]
+RewriteCond %{HTTP_USER_AGENT} ^MS\ FrontPage* [OR]
+RewriteCond %{HTTP_USER_AGENT} ^MSFrontPage [OR]
+RewriteCond %{HTTP_USER_AGENT} ^MSIECrawler [OR]
+RewriteCond %{HTTP_USER_AGENT} ^MSProxy [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Navroad [OR]
+RewriteCond %{HTTP_USER_AGENT} ^NearSite [OR]
+RewriteCond %{HTTP_USER_AGENT} ^NetAnts [OR]
+RewriteCond %{HTTP_USER_AGENT} ^NetMechanic [OR]
+RewriteCond %{HTTP_USER_AGENT} ^NetSpider [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Net\ Vampire [OR]
+RewriteCond %{HTTP_USER_AGENT} ^NetZIP [OR]
+RewriteCond %{HTTP_USER_AGENT} ^NICErsPRO [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Ninja [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Octopus [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Offline\ Explorer [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Offline\ Navigator [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Openfind [OR]
+RewriteCond %{HTTP_USER_AGENT} ^PageGrabber [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Papa\ Foto [OR]
+RewriteCond %{HTTP_USER_AGENT} ^pavuk [OR]
+RewriteCond %{HTTP_USER_AGENT} ^pcBrowser [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Ping [OR]
+RewriteCond %{HTTP_USER_AGENT} ^PingALink [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Pockey [OR]
+RewriteCond %{HTTP_USER_AGENT} ^psbot [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Pump [OR]
+RewriteCond %{HTTP_USER_AGENT} ^QRVA [OR]
+RewriteCond %{HTTP_USER_AGENT} ^RealDownload [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Reaper [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Recorder [OR]
+RewriteCond %{HTTP_USER_AGENT} ^ReGet [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Scooter [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Seeker [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Siphon [OR]
+RewriteCond %{HTTP_USER_AGENT} ^sitecheck.internetseer.com [OR]
+RewriteCond %{HTTP_USER_AGENT} ^SiteSnagger [OR]
+RewriteCond %{HTTP_USER_AGENT} ^SlySearch [OR]
+RewriteCond %{HTTP_USER_AGENT} ^SmartDownload [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Snake [OR]
+RewriteCond %{HTTP_USER_AGENT} ^SpaceBison [OR]
+RewriteCond %{HTTP_USER_AGENT} ^sproose [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Stripper [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Sucker [OR]
+RewriteCond %{HTTP_USER_AGENT} ^SuperBot [OR]
+RewriteCond %{HTTP_USER_AGENT} ^SuperHTTP [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Surfbot [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Szukacz [OR]
+RewriteCond %{HTTP_USER_AGENT} ^tAkeOut [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Teleport\ Pro [OR]
+RewriteCond %{HTTP_USER_AGENT} ^URLSpiderPro [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Vacuum [OR]
+RewriteCond %{HTTP_USER_AGENT} ^VoidEYE [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Web\ Image\ Collector [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Web\ Sucker [OR]
+RewriteCond %{HTTP_USER_AGENT} ^WebAuto [OR]
+RewriteCond %{HTTP_USER_AGENT} ^[Ww]eb[Bb]andit [OR]
+RewriteCond %{HTTP_USER_AGENT} ^webcollage [OR]
+RewriteCond %{HTTP_USER_AGENT} ^WebCopier [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Web\ Downloader [OR]
+RewriteCond %{HTTP_USER_AGENT} ^WebEMailExtrac.* [OR]
+RewriteCond %{HTTP_USER_AGENT} ^WebFetch [OR]
+RewriteCond %{HTTP_USER_AGENT} ^WebGo\ IS [OR]
+RewriteCond %{HTTP_USER_AGENT} ^WebHook [OR]
+RewriteCond %{HTTP_USER_AGENT} ^WebLeacher [OR]
+RewriteCond %{HTTP_USER_AGENT} ^WebMiner [OR]
+RewriteCond %{HTTP_USER_AGENT} ^WebMirror [OR]
+RewriteCond %{HTTP_USER_AGENT} ^WebReaper [OR]
+RewriteCond %{HTTP_USER_AGENT} ^WebSauger [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Website [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Website\ eXtractor [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Website\ Quester [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Webster [OR]
+RewriteCond %{HTTP_USER_AGENT} ^WebStripper [OR]
+RewriteCond %{HTTP_USER_AGENT} WebWhacker [OR]
+RewriteCond %{HTTP_USER_AGENT} ^WebZIP [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Wget [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Whacker [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Widow [OR]
+RewriteCond %{HTTP_USER_AGENT} ^WWWOFFLE [OR]
+RewriteCond %{HTTP_USER_AGENT} ^x-Tractor [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Xaldon\ WebSpider [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Xenu [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Zeus.*Webster [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Zeus
+RewriteRule ^.* - [F,L]
+RewriteCond %{HTTP_REFERER} ^http://www.geven-nemen.nl$
+RewriteRule !^http://[^/.]\.geven-nemen.nl.* - [F,L]
+ 
+# stop hotlinking (gif/jpg) and serve alternate content
+#I have included an image for you to upload, please note if you use your images out side of your server (like linked into EBAY) you cannot use this.
+
+#<IfModule mod_rewrite.c>
+#RewriteEngine on
+#RewriteCond %{HTTP_REFERER} !^$
+#RewriteCond %{HTTP_REFERER} !^http://(www\.)?geven-nemen\.nl/.*$ [NC]
+#RewriteRule .*\.(gif|jpg)$ http://www.geven-nemen.nl/images/stolen.gif [R,NC,L]
+#</ifModule>
+
+
+#BAN IP NUMBERS, ALL OF TURKEY
+ 
+<Limit GET PUT POST>
 order allow,deny
+# ban domains
+deny from .br.geocities.com
+# ban entire country ~ Turkey
+deny from 62.29.0.0/17
+deny from 62.56.128.0/22
+deny from 62.85.128.0/19
+deny from 62.108.64.0/19
+deny from 62.113.0.0/19
+deny from 62.184.58.0/27
+deny from 62.185.166.64/26
+deny from 62.184.178.96/29
+deny from 62.186.77.0/26
+deny from 62.201.192.0/18
+deny from 62.229.128.0/24
+deny from 62.229.130.0/24
+deny from 62.244.192.0/18
+deny from 62.248.0.0/17
+deny from 64.18.138.0/24
+deny from 64.28.128.0/20
+deny from 65.182.7.0/24
+deny from 66.178.5.0/24
+deny from 66.178.52.0/24
+deny from 66.205.36.0/22
+deny from 69.30.204.0/23
+deny from 80.71.128.0/20
+deny from 80.88.138.224/27
+deny from 80.88.141.160/27
+deny from 80.251.0.0/20
+deny from 80.251.32.0/20
+deny from 81.6.64.0/18
+deny from 81.8.0.0/17
+deny from 81.21.160.0/20
+deny from 81.22.97.0/24
+deny from 81.31.193.224/29
+deny from 81.31.195.112/29
+deny from 81.31.195.136/29
+deny from 81.31.195.216/30
+deny from 81.31.196.172/30
+deny from 81.31.197.16/29
+deny from 81.31.197.64/30
+deny from 81.31.197.128/30
+deny from 81.31.198.152/29
+deny from 81.31.198.216/29
+deny from 81.31.199.72/29
+deny from 81.31.199.140/30
+deny from 81.31.199.160/29
+deny from 81.31.200.64/29
+deny from 81.31.200.76/30
+deny from 81.212.0.0/14
+deny from 82.145.224.0/19
+deny from 82.151.128.0/19
+deny from 82.222.0.0/16
+deny from 83.66.0.0/16
+deny from 83.166.48.0/28
+deny from 84.11.37.192/26
+deny from 84.17.64.0/19
+deny from 84.44.0.0/17
+deny from 84.51.0.0/18
+deny from 85.96.0.0/12
+deny from 85.153.0.0/16
+deny from 85.158.96.0/21
+deny from 85.159.64.0/21
+deny from 85.235.64.0/24
+deny from 86.108.128.0/17
+deny from 88.240.0.0/16
+deny from 139.179.0.0/16
+deny from 144.122.0.0/16
+deny from 155.223.0.0/16
+deny from 160.75.0.0/16
+deny from 161.9.0.0/16
+deny from 168.139.0.0/16
+deny from 192.70.133.0/23
+deny from 192.129.87.0/24
+deny from 192.160.21.0/24
+deny from 193.23.156.0/24
+deny from 193.25.124.0/23
+deny from 193.41.2.0/23
+deny from 193.42.216.0/24
+deny from 193.95.0.0/17
+deny from 193.108.213.0/24
+deny from 193.109.134.0/23
+deny from 193.110.170.0/23
+deny from 193.110.208.0/21
+deny from 193.140.0.0/16
+deny from 193.178.218.0/24
+deny from 193.188.198.0/23
+deny from 193.192.96.0/19
+deny from 193.201.149.192/26
+deny from 193.201.157.0/25
+deny from 193.218.113.0/24
+deny from 193.218.200.0/24
+deny from 193.219.208.0/30
+deny from 193.220.68.0/24
+deny from 193.243.192.0/19
+deny from 193.254.228.0/23
+deny from 193.254.252.0/23
+deny from 193.255.0.0/16
+deny from 194.9.174.0/24
+deny from 194.24.224.0/23
+deny from 194.27.0.0/16
+deny from 194.29.208.0/21
+deny from 194.54.32.0/19
+deny from 194.67.205.0/23
+deny from 194.69.206.0/24
+deny from 194.117.97.172/30
+deny from 194.117.110.80/28
+deny from 194.117.113.72/30
+deny from 194.117.114.4/30
+deny from 194.117.118.40/30
+deny from 194.117.119.4/32
+deny from 194.117.119.18/32
+deny from 194.117.119.20/32
+deny from 194.117.119.22/32
+deny from 194.117.119.24/32
+deny from 194.117.119.27/32
+deny from 194.117.119.34/32
+deny from 194.117.119.53/32
+deny from 194.117.119.55/32
+deny from 194.117.119.58/32
+deny from 194.117.119.61/32
+deny from 194.117.119.73/32
+deny from 194.117.119.76/32
+deny from 194.117.119.80/32
+deny from 194.117.119.86/32
+deny from 194.117.119.93/31
+deny from 194.117.119.96/32
+deny from 194.117.119.99/31
+deny from 194.117.119.108/32
+deny from 194.117.120.15/32
+deny from 194.117.120.114/32
+deny from 194.117.120.233/32
+deny from 194.117.121.30/32
+deny from 194.117.121.70/32
+deny from 194.117.121.96/32
+deny from 194.117.121.101/32
+deny from 194.117.121.168/32
+deny from 194.117.121.192/31
+deny from 194.117.121.217/32
+deny from 194.125.232.0/22
+deny from 194.126.230.0/24
+deny from 194.133.65.0/24
+deny from 194.133.160.0/20
+deny from 194.133.240.0/23
+deny from 194.133.251.0/24
+deny from 194.133.253.0/28
+deny from 194.133.255.0/24
+deny from 194.242.32.0/24
+deny from 195.8.109.0/24
+deny from 195.33.192.0/18
+deny from 195.39.224.0/23
+deny from 195.46.128.0/19
+deny from 195.49.216.0/21
+deny from 195.64.128.0/18
+deny from 195.74.32.0/19
+deny from 195.75.202.0/26
+deny from 195.75.202.128/25
+deny from 195.75.222.0/28
+deny from 195.75.222.24/29
+deny from 195.75.222.160/27
+deny from 195.75.236.0/28
+deny from 195.75.236.96/29
+deny from 195.75.236.112/28
+deny from 195.75.238.0/25
+deny from 195.79.199.192/29
+deny from 195.79.204.192/27
+deny from 195.85.242.0/24
+deny from 195.85.255.0/24
+deny from 195.87.0.0/16
+deny from 195.112.128.0/19
+deny from 195.112.160.16/30
+deny from 195.112.166.12/30
+deny from 195.112.166.52/30
+deny from 195.112.166.60/30
+deny from 195.112.166.68/29
+deny from 195.112.166.80/30
+deny from 195.128.32.0/21
+deny from 195.128.254.0/23
+deny from 195.137.222.0/23
+deny from 195.140.196.0/22
+deny from 195.142.0.0/16
+deny from 195.149.85.0/24
+deny from 195.149.116.0/24
+deny from 195.155.0.0/16
+deny from 195.174.0.0/15
+deny from 195.177.206.0/23
+deny from 195.177.230.0/23
+deny from 195.183.236.192/26
+deny from 195.212.230.0/24
+deny from 195.212.244.8/29
+deny from 195.213.69.144/28
+deny from 195.214.128.0/18
+deny from 195.234.165.0/24
+deny from 195.242.122.0/23
+deny from 195.244.32.0/19
+deny from 195.245.227.0/24
+deny from 195.254.128.0/19
+deny from 196.3.132.0/20
+deny from 196.29.64.0/19
+deny from 196.32.32.0/19
+deny from 196.203.0.0/16
+deny from 199.89.210.0/24
+deny from 200.3.176.0/21
+deny from 200.9.216.0/24
+deny from 200.108.0.0/19
+deny from 201.238.64.0/18
+deny from 209.94.192.0/19
+deny from 212.2.192.0/19
+deny from 212.12.128.0/19
+deny from 212.15.0.0/19
+deny from 212.21.197.240/29
+deny from 212.29.64.0/18
+deny from 212.31.0.0/19
+deny from 212.33.0.0/19
+deny from 212.45.64.0/19
+deny from 212.48.224.0/19
+deny from 212.50.32.0/19
+deny from 212.57.0.0/19
+deny from 212.58.0.0/19
+deny from 212.63.170.168/30
+deny from 212.63.172.212/30
+deny from 212.63.172.224/30
+deny from 212.63.180.0/30
+deny from 212.63.180.8/30
+deny from 212.63.180.16/30
+deny from 212.63.180.28/30
+deny from 212.63.180.40/29
+deny from 212.63.180.56/30
+deny from 212.63.180.68/30
+deny from 212.63.180.84/30
+deny from 212.63.180.92/30
+deny from 212.63.180.108/29
+deny from 212.63.180.120/29
+deny from 212.63.180.200/30
+deny from 212.64.192.0/19
+deny from 212.65.128.0/19
+deny from 212.79.96.0/22
+deny from 212.79.122.0/23
+deny from 212.98.0.0/19
+deny from 212.98.192.0/18
+deny from 212.101.96.0/19
+deny from 212.108.128.0/19
+deny from 212.109.96.0/19
+deny from 212.109.224.0/19
+deny from 212.115.0.0/19
+deny from 212.125.0.0/19
+deny from 212.127.96.0/19
+deny from 212.133.128.0/17
+deny from 212.146.128.0/17
+deny from 212.154.0.0/17
+deny from 212.156.0.0/16
+deny from 212.174.0.0/15
+deny from 212.252.0.0/15
+deny from 213.14.0.0/16
+deny from 213.31.190.48/28
+deny from 213.31.223.144/28
+deny from 213.43.0.0/16
+deny from 213.62.14.64/26
+deny from 213.62.40.192/26
+deny from 213.74.0.0/16
+deny from 213.138.0.0/19
+deny from 213.139.192.0/18
+deny from 213.143.224.0/19
+deny from 213.144.96.0/19
+deny from 213.148.64.0/19
+deny from 213.150.160.0/19
+deny from 213.153.128.0/17
+deny from 213.155.96.0/19
+deny from 213.159.32.0/19
+deny from 213.161.128.0/19
+deny from 213.181.38.192/26
+deny from 213.186.128.0/19
+deny from 213.194.64.0/18
+deny from 213.202.0.0/19
+deny from 213.204.64.0/18
+deny from 213.208.3.192/29
+deny from 213.208.39.0/24
+deny from 213.209.169.144/29
+deny from 213.232.0.0/18
+deny from 213.236.32.0/19
+deny from 213.238.128.0/18
+deny from 213.243.0.0/18
+deny from 213.248.128.0/18
+deny from 213.254.128.0/19
+deny from 216.139.188.192/27
+deny from 217.17.144.0/20
+deny from 217.21.68.0/22
+deny from 217.23.110.96/27
+deny from 217.31.224.0/19
+deny from 217.64.144.0/20
+deny from 217.64.208.0/20
+deny from 217.68.208.0/20
+deny from 217.77.241.113/32
+deny from 217.77.241.218/32
+deny from 217.77.242.169/32
+deny from 217.77.246.192/30
+deny from 217.131.0.0/16
+deny from 217.138.38.248/29
+deny from 217.169.192.0/20
+deny from 217.173.157.128/28
+deny from 217.173.157.192/27
+deny from 217.173.158.64/27
+deny from 217.174.32.0/20
+deny from 217.174.224.0/20
+deny from 217.194.135.160/28
+deny from 217.195.192.0/20
+
+# Ban a few extra ips
+deny from 81.169.137.114
+deny from 74.53.46.98
+deny from 75.126.134.16
+deny from 203.194.159.159
+deny from 203.196.161.116
+deny from 201.72.166.36
+deny from 212.65.64.19
+deny from 212.12.114.142
+deny from 212.241.213.57
+deny from 219.95.39.53
+deny from 209.200.253.165
+deny from 201.72.166.36
+deny from 213.203.223.25
+deny from 66.249.67.86
+deny from 200.140.15.3
+deny from 83.11.204.75
+deny from 83.11.202.74
+deny from 83.11.241.28
+deny from 83.240.152.23
+deny from 83.217.84.73
+deny from 83.145.82.134
+deny from 85.108.245.115
+deny from 61.222.92.150
+deny from 24.83.72.98
+deny from 59.94.170.4
 deny from 92.65.189.50
 deny from 82.172.160.68
 deny from 77.170.130.64
 allow from all
+</Limit>
+
+# deny most common except .php
+<FilesMatch "\.(inc|tpl|h|ihtml|sql|ini|conf|class|bin|spd|theme|module|exe)$">
+deny from all
+</FilesMatch>
+
+# Disable .htaccess viewing from browser
+<Files ~ "^\.ht">
+Order allow,deny
+Deny from all
+Satisfy All
+</Files>
+
+
+# Disable access to config.php
+<Files ~ "includes\configure.php$">
+deny from all
+</Files>
+
+# FORCE TYPE
+<Files site>
+ForceType application/x-httpd-php
+</Files>
