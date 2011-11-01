@@ -276,7 +276,6 @@
 			$entrancecode=$ideal->transaction_id;
 			tep_db_query("UPDATE " . TABLE_MOLLIEIDEAL_PAYMENTS . " SET entrancecode = '" . $entrancecode . " ' WHERE payment_id = ' ".$paymentid."'");
       }
-
 		tep_redirect(str_replace('&amp;','&',$ideal->bankurl));
 	 }
 
