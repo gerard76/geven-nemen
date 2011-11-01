@@ -116,9 +116,9 @@ class ideal {
 	
 	function createPayment() {
 		// prepares a payment with mollie
-		if($this->partnerid=='' OR $this->amount=='' OR $this->reporturl=='' OR $this->returnurl=='' OR $this->description=='' OR $this->bankid=='')
+		if($this->partnerid=='' OR $this->amount=='' OR $this->reporturl=='' OR $this->returnurl=='' OR $this->description=='' OR $this->bankid=='') {
 			return false;
-
+    }
 		$result = $this->sendToHost('www.mollie.nl', '/xml/ideal/',
 				'a=fetch'.
 				'&partnerid='.urlencode($this->partnerid).
@@ -133,12 +133,13 @@ class ideal {
 		list($headers, $xml) = preg_split("/(\r?\n){2}/", $result, 2);
 		// shiftoff wrapping <reponse> and <order>
 		$data = @array_shift(@array_shift(XML_unserialize($xml)));
-		
+
 		$this->transaction_id 	= $data['transaction_id'];
 		$this->amount				= $data['amount'];
 		$this->currency			= $data['currency'];
-		$this->bankurl				= html_entity_decode($data['URL']);
+		$this->bankurl				= str_replace('trxid=', '&trxid=', html_entity_decode($data['URL']));
 		$this->statusmessage		= $data['message'];
+
 		return true;
 	}
 
