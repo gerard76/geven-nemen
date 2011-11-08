@@ -284,7 +284,7 @@ define('ICON_SUCCESS', 'Succes');
 define('ICON_WARNING', 'Waarschuwing');
 
 define('TEXT_GREETING_PERSONAL', '
-Leuk dat je er weer bent <span class="greetUser">%s!</span><br> Ik wens je weer veel shop-plezier.<p><b>Let op!</b> Wegens vakantie worden bestellingen pas na 6 september behandeld.<p>Groetjes Mila.');
+Leuk dat je er weer bent <span class="greetUser">%s!</span><br> Ik wens je weer veel shop-plezier.<p>Groetjes Mila.');
 define('TEXT_GREETING_PERSONAL_RELOGON', '<small>Als u niet %s bent, <a href="%s"><u>log uzelf in</u></a> met uw registratiegegevens.</small>');
 define('TEXT_GREETING_GUEST', '
 In mijn webshop kunt u online diverse kadootjes, woonaccessoires en decoraties bestellen.<br>Om aan iemand anders te <span class="greetUser">Geven</span> of voor jezelf te <span class="greetUser">Nemen</span>. <p>
