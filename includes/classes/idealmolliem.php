@@ -132,12 +132,16 @@ class ideal {
 
 		list($headers, $xml) = preg_split("/(\r?\n){2}/", $result, 2);
 		// shiftoff wrapping <reponse> and <order>
+
+    $xml = str_replace('&', 'xmlfuck', $xml);
 		$data = @array_shift(@array_shift(XML_unserialize($xml)));
+    foreach($data as $key => $value)
+      $data[$key] = str_replace('xmlfuck', '&', $value);
 
 		$this->transaction_id 	= $data['transaction_id'];
 		$this->amount				= $data['amount'];
 		$this->currency			= $data['currency'];
-		$this->bankurl				= str_replace('trxid=', '&trxid=', html_entity_decode($data['URL']));
+		$this->bankurl				= str_replace('xmlfuck', '&', html_entity_decode($data['URL']));
 		$this->statusmessage		= $data['message'];
 
 		return true;
