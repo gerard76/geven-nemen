@@ -288,7 +288,7 @@ Leuk dat je er weer bent <span class="greetUser">%s!</span><br> Ik wens je weer 
 define('TEXT_GREETING_PERSONAL_RELOGON', '<small>Als u niet %s bent, <a href="%s"><u>log uzelf in</u></a> met uw registratiegegevens.</small>');
 define('TEXT_GREETING_GUEST', '
 In mijn webshop kunt u online diverse kadootjes, woonaccessoires en decoraties bestellen.<br>Om aan iemand anders te <span class="greetUser">Geven</span> of voor jezelf te <span class="greetUser">Nemen</span>. <p>
-<strong>Nieuw!</strong> Bestellingen boven 75,- worden <strong>gratis verzonden</strong>. De rest betaalt slechts 2,95!<p>
+<strong>Nieuw!</strong> Bestellingen boven 50,- worden <strong>gratis verzonden</strong>.<p>
 Groetjes, Mila.');
 
 /*<p>Voor slechts &euro;2,50 meer zorg ik voor een mooi ingepakt kadootje. Voor voorbeelden kijk bij \'inpakvoorbeelden\'.en mocht er iets zijn, je kunt me altijd <a href=\'contact_us.php\'>mailen</a><p>*/
