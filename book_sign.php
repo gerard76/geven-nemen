@@ -90,7 +90,7 @@
     }
 
     if (!empty($gb_email)) {
-      if (tep_validate_email($gb_email)) {
+      if (tep_validate_email($gb_email) && !$error) {
         //mail to store owner
         tep_mail(STORE_OWNER, STORE_OWNER_EMAIL_ADDRESS, EMAIL_OWNER_SUBJECT, $gb_text, $gb_name, $gb_email);
 
