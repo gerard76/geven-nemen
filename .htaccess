@@ -10,7 +10,7 @@ RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /index\.php\ HTTP/
 RewriteRule ^index\.php$ http://www.geven-nemen.nl/ [R=301,L]
 
 # Redirect domain.com to www.domain.com
-RewriteCond %{HTTP_HOST} ^geven-nemen.nl [NC]
+RewriteCond %{HTTP_HOST} !www.geven-nemen.nl [NC]
 RewriteRule ^(.*)$ http://www.geven-nemen.nl/$1 [L,R=301]
 
 RewriteBase /
