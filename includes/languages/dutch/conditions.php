@@ -18,7 +18,7 @@ define('TEXT_INFORMATION', 'Algemene voorwaarden van Geven & Nemen, gevestigd te
 Als u bij Geven & Nemen artikelen bestelt, verklaart u zich akkoord met de bepalingen in deze Algemene Voorwaarden.
 <br>
 <ul>
-<li>Alle prijzen zijn in euro\'s vermeld, inclusief 19% <abbr title="Belasting Toegevoegde Waarde">BTW</abbr> en <abbr title="exclusief">excl.</abbr> verzendkosten.
+<li>Alle prijzen zijn in euro\'s vermeld, inclusief 21% <abbr title="Belasting Toegevoegde Waarde">BTW</abbr> en <abbr title="exclusief">excl.</abbr> verzendkosten.
 <li>Voor de verzending van de artikelen breng ik de daarvoor noodzakelijke verzendkosten in rekening.
 <li>Ik doe mijn best om de website zo up-to-date mogelijk te houden, echter het kan in uitzonderlijke gevallen voorkomen dat er onverhoopt een Geven & Nemen product niet, of tijdelijk niet meer, leverbaar is. In dit geval neem ik zo spoedig mogelijk contact met u op. 
 <li>Indien u een verkeerde bestelling heeft ontvangen zal Geven & Nemen zorg dragen voor het verzenden van de goede artikelen. 
