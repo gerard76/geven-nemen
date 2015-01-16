@@ -21,7 +21,7 @@ define('TEXT_INFORMATION', 'Wil je één of meerdere artikelen bestellen dan kan d
 </ol>
 <p>
 <strong>Verzenden</strong><br>
-Voor alle bestellingen tot 25,- binnen Nederland (ongeacht of het pakketpost of brievenbuspost betreft) betaalt u 6,75 euro. Voor bestellingen vanaf 25,- betaald u 2,95 euro. Vanaf 50 euro worden de producten gratis verzonden met de Standaard Bezorgdienst van TNT Post.
+Voor alle bestellingen tot 25,- binnen Nederland (ongeacht of het pakketpost of brievenbuspost betreft) betaalt u 6,95 euro. Voor bestellingen vanaf 25,- betaald u 2,95 euro. Vanaf 50 euro worden de producten gratis verzonden met de Standaard Bezorgdienst van TNT Post.
 Ik besteed veel zorg aan het inpakken en verzenden van jouw bestelling. Het verzenden van een bestelling gebeurt echter op risico van de koper. U heeft ook de mogelijkheid om bestellingen verzekerd laten te verzenden. Kosten zijn in dit geval &euro; 5,50 extra. Wilt u een bestelling op komen halen neem dan even <a href="contact_us.php" class="mailaddress">contact</a> met me op.
 <p>
 <strong>Betalingsmogelijkheden</strong>
