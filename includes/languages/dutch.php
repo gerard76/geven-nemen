@@ -289,6 +289,7 @@ define('TEXT_GREETING_PERSONAL_RELOGON', '<small>Als u niet %s bent, <a href="%s
 define('TEXT_GREETING_GUEST', '
 In mijn webshop kunt u online diverse kadootjes, woonaccessoires en decoraties bestellen.<br>Om aan iemand anders te <span class="greetUser">Geven</span> of voor jezelf te <span class="greetUser">Nemen</span>. <p>
 <strong>Nieuw!</strong> Bestellingen boven 50,- worden <strong>gratis verzonden</strong>.<p>
+Volg me nu ook op <a href="https://www.facebook.com/webshop.geven.nemen" style="color:blue">facebook</a><p>
 Groetjes, Mila.');
 
 /*<p>Voor slechts &euro;2,50 meer zorg ik voor een mooi ingepakt kadootje. Voor voorbeelden kijk bij \'inpakvoorbeelden\'.en mocht er iets zijn, je kunt me altijd <a href=\'contact_us.php\'>mailen</a><p>*/
