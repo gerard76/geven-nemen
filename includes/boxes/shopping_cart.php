@@ -64,4 +64,8 @@
 ?>
             </td>
           </tr>
+
+<tr><td>
+<tr><td><?php new infoBox(array(array('text' => '<img src="/images/ideal_paypal.jpg" width="168">'))); ?></td></tr>
+
 <!-- shopping_cart_eof //-->
